@@ -64,7 +64,7 @@ All `varint(N)` types are encoded in "little endian" order, meaning that the fir
     columns: (auto, auto),
     rows: (auto),
     align: center,
-    text()[*Type*], text()[*Type*],
+    text()[*Data Type*], text()[*Wire Type*],
     text(`u16`), text(`varint(u16)`),
     text(`i16`), text(`varint(i16)`),
     text(`u32`), text(`varint(u32)`),
@@ -86,7 +86,7 @@ Additionally the following two types are not part of the Serde Data Model, but a
     columns: (auto, auto),
     rows: (auto),
     align: center,
-    text()[*Type*], text()[*Type*],
+    text()[*Data Type*], text()[*Wire Type*],
     text(`usize`), text(`varint(usize)`),
     text(`isize`), text(`varint(isize)`),
   ),
@@ -94,7 +94,7 @@ Additionally the following two types are not part of the Serde Data Model, but a
 
 See the section "isize and usize" below for more details on these types are used.
 
-== Unsized Integer Encoding
+== Unsigned Integer Encoding
 
 For example, the following 16-bit unsigned numbers would be encoded as follows:
 
