@@ -1,4 +1,4 @@
-#set page(paper: "a4", columns: 2, margin: 1.5cm)
+#set page(paper: "a4", margin: 1.5cm)
 #set text(font: "Liberation Serif", size: 12pt)
 #set heading(numbering: "1.1.1 -")
 // #show selector(heading.where(level: 1)) : set heading(numbering: none)
@@ -11,6 +11,100 @@
   ]
 }
 
+#stack(dir: ttb,
+  rect(height: 33%, width: 100%, stroke: none)[
+    #set align(bottom + left)
+    #stack(
+      dir: ttb,
+      text(size: 36pt)[*The Postcard Specification*],
+      // v(0.5cm),
+      // text(size: 24pt)[and other various bits],
+      v(0.5cm),
+      stack(dir: ltr,
+        line(stroke: black + 2.0mm, length: 25%),
+        line(stroke: blue + 2.0mm, length: 25%),
+        line(stroke: red + 2.0mm, length: 25%),
+        line(stroke: green + 2.0mm, length: 25%),
+      ),
+    )
+  ],
+  rect(height: 33%, width: 100%, stroke: none)[
+    #set align(top + left)
+    #stack(
+      dir: ttb,
+      v(0.25cm),
+      text(size: 18pt)[Revision 1.x],
+      v(0.33cm),
+      text(size: 18pt)[OneVariable GmbH],
+      v(0.33cm),
+      text(size: 18pt)[Berlin, Germany],
+    )
+  ],
+  rect(height: 33%, width: 100%, stroke: none)[
+
+  ]
+)
+
+#pagebreak()
+#set page(columns: 2)
+#set par.line(
+  numbering: n => text(black.lighten(50%))[#n]
+)
+#counter(heading).update(0)
+
+= Introduction
+
+todo write an introduction
+
+= TODO
+
+Common stuff for all parts of the spec go here.
+
+#pagebreak()
+#set page(columns: 1)
+#set par.line(
+  numbering: none
+)
+
+#stack(dir: ttb,
+  rect(height: 33%, width: 100%, stroke: none)[
+    // #set align(top + right)
+    // #stack(
+    //   dir: ttb,
+    //   v(0.25cm),
+    //   text(size: 18pt)[Revision 1.x],
+    //   v(0.25cm),
+    //   text(size: 18pt)[2025-0x-0y],
+    // )
+    #set align(bottom + left)
+    #stack(
+      dir: ttb,
+      text(size: 36pt)[*The Postcard Wire Format*],
+      v(0.5cm),
+      // text(size: 24pt)[and other various bits],
+      // v(0.5cm),
+      line(stroke: blue + 2.0mm, length: 100%),
+    )
+  ],
+  rect(height: 33%, width: 100%, stroke: none)[
+    #set align(top + left)
+    #stack(
+      dir: ttb,
+      v(0.25cm),
+      text(size: 18pt)[Revision 1.x],
+      v(0.33cm),
+      text(size: 18pt)[OneVariable GmbH],
+      v(0.33cm),
+      text(size: 18pt)[Berlin, Germany],
+    )
+  ],
+  rect(height: 33%, width: 100%, stroke: none)[
+
+  ]
+)
+
+#set page(columns: 2)
+#counter(heading).update(0)
 #set par.line(
   numbering: n => text(blue.lighten(50%))[#n]
 )
@@ -405,6 +499,45 @@ A `struct_variant` is an instance of a Tagged Union, consisting of a varint(u32)
 
 #pagebreak()
 #counter(heading).update(0)
+#set page(columns: 1)
+#set par.line(
+  numbering: none
+)
+
+#stack(dir: ttb,
+  rect(height: 33%, width: 100%, stroke: none)[
+    #set align(bottom + left)
+    #stack(
+      dir: ttb,
+      text(size: 36pt)[*Postcard Schema Keys*],
+      // v(0.5cm),
+      // text(size: 24pt)[and other various bits],
+      v(0.5cm),
+      line(stroke: red + 2mm, length: 100%),
+    )
+  ],
+  rect(height: 33%, width: 100%, stroke: none)[
+    #set align(top + left)
+    #stack(
+      dir: ttb,
+      v(0.25cm),
+      text(size: 18pt)[James Munns],
+      v(0.25cm),
+      text(size: 18pt)[Revision 1.x],
+      v(0.25cm),
+      text(size: 18pt)[2025-0x-0y],
+    )
+  ],
+  rect(height: 33%, width: 100%, stroke: none)[
+
+  ]
+)
+
+#pagebreak()
+#set page(columns: 2)
+#set par.line(
+  numbering: n => text(red.lighten(50%))[#n]
+)
 
 #place(top, scope: "parent", float: true)[
   #set align(center)
@@ -414,7 +547,7 @@ A `struct_variant` is an instance of a Tagged Union, consisting of a varint(u32)
     ]
     version v0.x -- 202x-yy-zz
   
-    #line(length: 80%, stroke: blue.lighten(50%))
+    #line(length: 80%, stroke: red.lighten(50%))
   
     #set align(left)
   
@@ -648,6 +781,45 @@ When encoded in the Postcard Wire Format, Postcard-Schema Keys are encoded as a 
 
 #pagebreak()
 #counter(heading).update(0)
+#set page(columns: 1)
+#set par.line(
+  numbering: none
+)
+
+#stack(dir: ttb,
+  rect(height: 33%, width: 100%, stroke: none)[
+    #set align(bottom + left)
+    #stack(
+      dir: ttb,
+      text(size: 36pt)[*The Postcard-RPC Protocol*],
+      // v(0.5cm),
+      // text(size: 24pt)[and other various bits],
+      v(0.5cm),
+      line(stroke: green + 2mm, length: 100%),
+    )
+  ],
+  rect(height: 33%, width: 100%, stroke: none)[
+    #set align(top + left)
+    #stack(
+      dir: ttb,
+      v(0.25cm),
+      text(size: 18pt)[James Munns],
+      v(0.25cm),
+      text(size: 18pt)[Revision 1.x],
+      v(0.25cm),
+      text(size: 18pt)[2025-0x-0y],
+    )
+  ],
+  rect(height: 33%, width: 100%, stroke: none)[
+
+  ]
+)
+
+#pagebreak()
+#set page(columns: 2)
+#set par.line(
+  numbering: n => text(green.lighten(50%))[#n]
+)
 
 #place(top, scope: "parent", float: true)[
   #set align(center)
@@ -657,7 +829,7 @@ When encoded in the Postcard Wire Format, Postcard-Schema Keys are encoded as a 
     ]
     version v0.x -- 202x-yy-zz
   
-    #line(length: 80%, stroke: blue.lighten(50%))
+    #line(length: 80%, stroke: green.lighten(50%))
   
     #set align(left)
   
